@@ -1,0 +1,10 @@
+- title "Auditorium Type Details"
+
+.well
+  %p
+    %strong Name:
+    = @auditorium_type.name
+  %p
+  = link_to "Edit", edit_auditorium_type_path(@auditorium_type), :class => 'btn'
+  = link_to "Destroy", @auditorium_type, :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-danger'
+  = link_to "View All", auditorium_types_path, :class => 'btn'

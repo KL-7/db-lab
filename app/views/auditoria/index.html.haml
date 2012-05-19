@@ -1,0 +1,27 @@
+- title "Auditoria"
+
+.well
+  %table.table.table-striped
+    %thead
+      %tr
+        %th ID
+        %th Auditorium Number
+        %th Seats Number
+        %th Building Number
+        %th Auditorium Type
+        %th
+    %tbody
+      - @auditoria.each do |auditorium|
+        %tr
+          %td= auditorium.id
+          %td= auditorium.auditorium_number
+          %td= auditorium.seats_number
+          %td= auditorium.building_number
+          %td= auditorium.auditorium_type_name
+
+          %td
+            = link_to "Show", auditorium, :class => 'btn btn-mini btn-primary'
+            = link_to "Edit", edit_auditorium_path(auditorium), :class => 'btn btn-mini'
+            = link_to "Destroy", auditorium, :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-mini btn-danger'
+
+%p= link_to "New Auditorium", new_auditorium_path, :class => 'btn primary'

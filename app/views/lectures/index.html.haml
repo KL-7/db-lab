@@ -1,0 +1,27 @@
+- title "Lectures"
+
+.well
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Course
+        %th Auditorium
+        %th Start Time
+        %th End Time
+        %th Weekday
+        %th
+    %tbody
+      - @lectures.each do |lecture|
+        %tr
+          %td= lecture.course_name
+          %td= lecture.auditorium_name
+          %td= time lecture.start_time
+          %td= time lecture.end_time
+          %td= lecture.weekday
+
+          %td
+            = link_to "Show", lecture, :class => 'btn btn-mini btn-primary'
+            = link_to "Edit", edit_lecture_path(lecture), :class => 'btn btn-mini'
+            = link_to "Destroy", lecture, :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-mini btn-danger'
+
+%p= link_to "New Lecture", new_lecture_path, :class => 'btn primary'

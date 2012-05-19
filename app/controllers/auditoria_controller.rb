@@ -38,11 +38,4 @@ class AuditoriaController < ApplicationController
     @auditorium.destroy
     redirect_to auditoria_url, :notice => "Successfully destroyed auditorium."
   end
-
-  protected
-
-  def auditorium_types
-    @auditorium_types ||= AuditoriumType.all
-  end
-  helper_method :auditorium_types
 end

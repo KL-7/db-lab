@@ -1,0 +1,19 @@
+- title "Course Details"
+
+.well
+  %p
+    %strong Lecturer:
+    = @course.lecturer_full_name
+    %p
+    %strong Subject:
+    = @course.subject_name
+    %p
+    %strong Hours Per Week:
+    = @course.hours_per_week
+    %p
+    %strong Students Number:
+    = @course.students_number
+  %p
+  = link_to "Edit", edit_course_path(@course), :class => 'btn'
+  = link_to "Destroy", @course, :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-danger'
+  = link_to "View All", courses_path, :class => 'btn'

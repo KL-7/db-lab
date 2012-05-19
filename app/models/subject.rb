@@ -1,4 +1,4 @@
-class AuditoriumType < ActiveRecord::Base
+class Subject < ActiveRecord::Base
   attr_accessible :name
 
   validates :name, :presence => true

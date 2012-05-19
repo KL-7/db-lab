@@ -1,0 +1,21 @@
+= form_for @lecturer, :html => { :class => 'form-horizontal' } do |f|
+  %fieldset
+    %legend
+      = form_action_title
+      Lecturer
+    = model_errors(@lecturer)
+    .control-group
+      = f.label :first_name, :class => 'control-label'
+      .controls
+        = f.text_field :first_name, :class => 'text_field'
+    .control-group
+      = f.label :middle_name, :class => 'control-label'
+      .controls
+        = f.text_field :middle_name, :class => 'text_field'
+    .control-group
+      = f.label :last_name, :class => 'control-label'
+      .controls
+        = f.text_field :last_name, :class => 'text_field'
+    .form-actions
+      = f.submit nil, :class => 'btn btn-primary'
+      = link_to 'Cancel', lecturers_path, :class => 'btn'

@@ -1,0 +1,5 @@
+%div.model-errors
+  Errors:
+  %ul
+    - errors.each do |field, error|
+      %li #{field.to_s.humanize} #{error}.

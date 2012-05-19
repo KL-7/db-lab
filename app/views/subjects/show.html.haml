@@ -1,0 +1,10 @@
+- title "Subject Details"
+
+.well
+  %p
+    %strong Name:
+    = @subject.name
+  %p
+  = link_to "Edit", edit_subject_path(@subject), :class => 'btn'
+  = link_to "Destroy", @subject, :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-danger'
+  = link_to "View All", subjects_path, :class => 'btn'

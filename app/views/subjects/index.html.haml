@@ -1,0 +1,19 @@
+- title "Subjects"
+
+.well
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Name
+        %th
+    %tbody
+      - @subjects.each do |subject|
+        %tr
+          %td= subject.name
+
+          %td
+            = link_to "Show", subject, :class => 'btn btn-mini btn-primary'
+            = link_to "Edit", edit_subject_path(subject), :class => 'btn btn-mini'
+            = link_to "Destroy", subject, :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-mini btn-danger'
+
+%p= link_to "New Subject", new_subject_path, :class => 'btn primary'

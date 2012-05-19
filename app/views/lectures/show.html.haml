@@ -1,0 +1,22 @@
+- title "Lecture Details"
+
+.well
+  %p
+    %strong Course:
+    = @lecture.course_name
+    %p
+    %strong Auditorium:
+    = @lecture.auditorium_name
+    %p
+    %strong Start Time:
+    = time @lecture.start_time
+    %p
+    %strong End Time:
+    = time @lecture.end_time
+    %p
+    %strong Weekday:
+    = @lecture.weekday
+  %p
+  = link_to "Edit", edit_lecture_path(@lecture), :class => 'btn'
+  = link_to "Destroy", @lecture, :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-danger'
+  = link_to "View All", lectures_path, :class => 'btn'

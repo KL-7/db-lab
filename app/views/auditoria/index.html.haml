@@ -4,7 +4,6 @@
   %table.table.table-striped
     %thead
       %tr
-        %th ID
         %th Auditorium Number
         %th Seats Number
         %th Building Number
@@ -13,7 +12,6 @@
     %tbody
       - @auditoria.each do |auditorium|
         %tr
-          %td= auditorium.id
           %td= auditorium.auditorium_number
           %td= auditorium.seats_number
           %td= auditorium.building_number

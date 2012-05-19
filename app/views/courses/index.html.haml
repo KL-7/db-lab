@@ -1,0 +1,25 @@
+- title "Courses"
+
+.well
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Lecturer
+        %th Subject
+        %th Hours Per Week
+        %th Students Number
+        %th
+    %tbody
+      - @courses.each do |course|
+        %tr
+          %td= course.lecturer_full_name
+          %td= course.subject_name
+          %td= course.hours_per_week
+          %td= course.students_number
+
+          %td
+            = link_to "Show", course, :class => 'btn btn-mini btn-primary'
+            = link_to "Edit", edit_course_path(course), :class => 'btn btn-mini'
+            = link_to "Destroy", course, :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-mini btn-danger'
+
+%p= link_to "New Course", new_course_path, :class => 'btn primary'

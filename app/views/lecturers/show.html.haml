@@ -1,0 +1,16 @@
+- title "Lecturer Details"
+
+.well
+  %p
+    %strong First Name:
+    = @lecturer.first_name
+    %p
+    %strong Middle Name:
+    = @lecturer.middle_name
+    %p
+    %strong Last Name:
+    = @lecturer.last_name
+  %p
+  = link_to "Edit", edit_lecturer_path(@lecturer), :class => 'btn'
+  = link_to "Destroy", @lecturer, :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-danger'
+  = link_to "View All", lecturers_path, :class => 'btn'

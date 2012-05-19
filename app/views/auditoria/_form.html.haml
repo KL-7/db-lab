@@ -3,6 +3,7 @@
     %legend
       = form_action_title
       Auditorium
+    = model_errors(@auditorium)
     .control-group
       = f.label :auditorium_number, :class => 'control-label'
       .controls
@@ -18,7 +19,7 @@
     .control-group
       = f.label :auditorium_type, :class => 'control-label'
       .controls
-        = f.select :auditorium_type_id, options_from_collection_for_select(auditorium_types, :id, :name)
+        = f.select :auditorium_type_id, options_from_collection_for_select(AuditoriumType.all, :id, :name)
     .form-actions
       = f.submit nil, :class => 'btn btn-primary'
       = link_to 'Cancel', auditoria_path, :class => 'btn'

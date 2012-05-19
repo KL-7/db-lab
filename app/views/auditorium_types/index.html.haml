@@ -4,13 +4,11 @@
   %table.table.table-striped
     %thead
       %tr
-        %th ID
         %th Name
         %th
     %tbody
       - @auditorium_types.each do |auditorium_type|
         %tr
-          %td= auditorium_type.id
           %td= auditorium_type.name
 
           %td

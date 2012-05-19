@@ -1,0 +1,29 @@
+= form_for @lecture, :html => { :class => 'form-horizontal' } do |f|
+  %fieldset
+    %legend
+      = form_action_title
+      Lecture
+    = model_errors(@lecture)
+    .control-group
+      = f.label :course, :class => 'control-label'
+      .controls
+        = f.select :course_id, options_from_collection_for_select(Course.all, :id, :name)
+    .control-group
+      = f.label :auditorium, :class => 'control-label'
+      .controls
+        = f.select :auditorium_id, options_from_collection_for_select(Auditorium.all, :id, :name)
+    .control-group
+      = f.label :start_time, :class => 'control-label'
+      .controls
+        = f.time_select :start_time, :class => 'time_select'
+    .control-group
+      = f.label :end_time, :class => 'control-label'
+      .controls
+        = f.time_select :end_time, :class => 'time_select'
+    .control-group
+      = f.label :weekday, :class => 'control-label'
+      .controls
+        = f.select :weekday, options_for_select(Lecture::WEEKDAYS)
+    .form-actions
+      = f.submit nil, :class => 'btn btn-primary'
+      = link_to 'Cancel', lectures_path, :class => 'btn'

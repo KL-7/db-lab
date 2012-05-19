@@ -1,0 +1,23 @@
+- title "Lecturers"
+
+.well
+  %table.table.table-striped
+    %thead
+      %tr
+        %th First Name
+        %th Middle Name
+        %th Last Name
+        %th
+    %tbody
+      - @lecturers.each do |lecturer|
+        %tr
+          %td= lecturer.first_name
+          %td= lecturer.middle_name
+          %td= lecturer.last_name
+
+          %td
+            = link_to "Show", lecturer, :class => 'btn btn-mini btn-primary'
+            = link_to "Edit", edit_lecturer_path(lecturer), :class => 'btn btn-mini'
+            = link_to "Destroy", lecturer, :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-mini btn-danger'
+
+%p= link_to "New Lecturer", new_lecturer_path, :class => 'btn primary'

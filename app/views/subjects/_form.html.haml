@@ -1,13 +1,12 @@
-= form_for @auditorium_type, :html => { :class => 'form-horizontal' } do |f|
+= form_for @subject, :html => { :class => 'form-horizontal' } do |f|
   %fieldset
     %legend
       = form_action_title
-      Auditorium Type
-    = model_errors(@auditorium_type)
+      Subject
     .control-group
       = f.label :name, :class => 'control-label'
       .controls
         = f.text_field :name, :class => 'text_field'
     .form-actions
       = f.submit nil, :class => 'btn btn-primary'
-      = link_to 'Cancel', auditorium_types_path, :class => 'btn'
+      = link_to 'Cancel', subjects_path, :class => 'btn'

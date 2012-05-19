@@ -1,0 +1,20 @@
+- title "Queries"
+
+%hr
+
+= form_tag get_queries_path, :method => :get, :remote => true, :id => 'query_form', :class => 'form-horizontal' do
+  %fieldset
+    .control-group
+      = label_tag :query, 'Query', :class => 'control-label'
+      .controls
+        = select_tag :query, options_for_select(queries)
+    .control-group
+      = label_tag :query_params, 'Params', :class => 'control-label'
+      .controls
+        = text_field_tag :query_params, nil, :class => 'text_field'
+    .form-actions
+      = submit_tag nil, :class => 'btn btn-primary'
+
+%h1 Query result
+.well
+  %table#query_result.table.table-striped

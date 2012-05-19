@@ -9,4 +9,8 @@ DbApp::Application.routes.draw do
   resources :auditorium_types
   resources :auditoria
 
+  resources :queries, :only => [:index] do
+    get :get, :on => :collection
+  end
+
 end
